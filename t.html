@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+			<title>LE PENDU</title>
+		    <script src="jquery-2.2.4.js"></script>
+			<link rel="stylesheet" type="text/css" href="t.css">
+
+</head>
+<body background="le.jpg" >
+
+			<div class="container">
+				   <h1 > LE PENDU </h1>
+				   </br>
+			       <p id="mot" class="p" ></p>
+			       </br>
+			       <label id="label1">  ENTER LITTER : </label> <input name="LITTER" type="text" value=""  id="LITTER" />
+			       </br></br>
+				   <button id="TRY" class="buttoon">  TRY  </button> <button id="REST" class="buttoon">REST</button>
+				   </br></br>
+			       </br></br>
+				   <canvas id="myCanvas" width="300" height="150"  style="border:20px solid #d3d3d3;"></canvas>            
+		    </div>
+
+<script>
+	document.getElementById("myCanvas").style.color = "red";
+    $(document).ready(function()
+     {
+					var star=1;
+					var str="SALUT";
+					var arr=[""];
+					var x= 0;
+					var le="*";
+					var err=0;
+					var c=0;
+					var count=0;
+				$('#REST').click(function()
+				{
+					location.reload();
+				});
+
+				$('#TRY').click(function()
+				{//
+					var lett1 =$("#LITTER").val();
+					var lett = lett1.toUpperCase();
+					var stra = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+					var patt = new RegExp(lett);
+					var ress = patt.test(stra);
+
+					if (ress===true) 
+					{
+						for (var i = 0; i < str.length; i++)
+						{
+							if(lett==str[i])
+							{
+								c=1;
+								le =str[i];
+								x=i;
+								arr[x]=le;
+							}
+						}
+					var stra1 = str;
+					var patt1 = new RegExp(lett);
+					var ress1 = patt1.test(stra1);
+
+						if (ress1===true)
+						{
+						}else
+						{
+						err++;
+						res2();
+						}//$('#term').val().val()
+
+					}	else alert("Ivalid");
+
+
+
+
+								$("p").text(arr);
+            //$('#LITTER').value() = '';
+                    document.getElementById('LITTER').value = '';
+			});//   
+
+
+					var c1 = document.getElementById("myCanvas");
+					var ctx = c1.getContext("2d");
+
+			function res2()
+			{
+
+				if (err==1)
+				{
+				ctx.moveTo(100, 100);
+				ctx.lineTo(200, 100);
+				ctx.stroke();
+
+				}else
+
+				if (err==2)
+				{
+				ctx.moveTo(150, 100);
+				ctx.lineTo(150, 10);
+				ctx.stroke();
+				}else
+				if (err==3)
+				{
+				ctx.moveTo(150, 10);
+				ctx.lineTo(200, 10);
+				ctx.stroke();
+				}else
+				if (err==4)
+				{
+				ctx.moveTo(200, 10);
+				ctx.lineTo(200, 25);
+				ctx.stroke();
+				}else
+				if (err==5)
+				{
+				ctx.beginPath();
+				ctx.arc(200, 35, 10, 0, 2 * Math.PI);
+				ctx.stroke();
+				}
+				if (err==6)
+				{
+				ctx.moveTo(200, 45);
+				ctx.lineTo(200, 50);
+				ctx.stroke();
+				}
+				if (err==7)
+				{
+				ctx.moveTo(200, 50);
+				ctx.lineTo(190, 55);
+				ctx.stroke();
+				}
+				if (err==8)
+				{
+				ctx.moveTo(200, 50);
+				ctx.lineTo(210, 55);
+				ctx.stroke();
+				}
+				if (err==9)
+				{
+				ctx.moveTo(200, 50);
+				ctx.lineTo(200, 65);
+				ctx.stroke();
+				}
+				if (err==10)
+				{
+				ctx.moveTo(200, 65);
+				ctx.lineTo(185, 75);
+				ctx.stroke();
+				}
+				if (err==11)
+				{
+				ctx.moveTo(200, 65);
+				ctx.lineTo(215, 75);
+				ctx.stroke();
+				alert("GAME OVER NOOB !!");
+
+				}
+
+
+
+
+			}
+    });			
+
+</script>    
+ 
+</body>
+</html>
